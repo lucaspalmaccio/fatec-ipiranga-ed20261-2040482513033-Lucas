@@ -2,4 +2,5 @@
 
 R: Um Tipo Abstrato de Dados (TAD) é um modelo matemático para tipos de dados, onde definimos o comportamento do dado (seus valores possíveis e as operações que podem ser feitas com ele) sem nos preocuparmos em como ele será implementado no código. Em C, fazemos isso unindo uma struct (para os dados) com um conjunto de funções (para as operações).
 
+
 Característica Fundamental: A principal característica é o Encapsulamento (ou Ocultação de Informação). Quem usa o TAD não precisa (e nem deve) saber como os dados estão estruturados internamente. O programador interage com o TAD apenas através das funções fornecidas, garantindo que os dados não sejam alterados de forma indevida.
