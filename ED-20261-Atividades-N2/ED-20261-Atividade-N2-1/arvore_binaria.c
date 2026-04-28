@@ -12,9 +12,7 @@
 #include <string.h>
 #include "arvore_binaria.h"
 
-/* -------------------------------------------------------------------------- */
-/* Criacao e insercao (recursiva) na BST                                      */
-/* -------------------------------------------------------------------------- */
+// Criacao e insercao (recursiva) na BST                                      
 No* criarNo(int valor) {
     No *novo = (No*) malloc(sizeof(No));
     novo->valor    = valor;
@@ -32,23 +30,19 @@ No* inserir(No *raiz, int valor) {
     return raiz;
 }
 
-/* Busca recursiva por um valor */
+// Busca recursiva por um valor
 No* buscar(No *raiz, int valor) {
     if (raiz == NULL || raiz->valor == valor) return raiz;
     if (valor < raiz->valor) return buscar(raiz->esquerda, valor);
     return buscar(raiz->direita, valor);
 }
 
-/* -------------------------------------------------------------------------- */
-/* 1) RAIZ                                                                    */
-/* -------------------------------------------------------------------------- */
+// 1) RAIZ                                                                    
 void imprimirRaiz(No *raiz) {
     printf("Raiz:\n%d\n\n", raiz->valor);
 }
 
-/* -------------------------------------------------------------------------- */
-/* 2) NOS INTERNOS (pre-ordem, recursivo)                                     */
-/* -------------------------------------------------------------------------- */
+// 2) NOS INTERNOS (pre-ordem, recursivo)                                     
 void coletarInternos(No *raiz, int *vet, int *n) {
     if (raiz == NULL) return;
     if (raiz->esquerda != NULL || raiz->direita != NULL)
@@ -68,9 +62,7 @@ void imprimirInternos(No *raiz) {
     printf("\n\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 3) NOS EXTERNOS (FOLHAS) - grau 0                                          */
-/* -------------------------------------------------------------------------- */
+// 3) NOS EXTERNOS (FOLHAS) - grau 0                                          
 void coletarFolhas(No *raiz, int *vet, int *n) {
     if (raiz == NULL) return;
     if (raiz->esquerda == NULL && raiz->direita == NULL)
@@ -90,9 +82,8 @@ void imprimirFolhas(No *raiz) {
     printf("\n\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 4) NIVEIS  (Nivel 1 = raiz)                                                */
-/* -------------------------------------------------------------------------- */
+
+// 4) NIVEIS  (Nivel 1 = raiz)                                                
 void coletarNivel(No *raiz, int nivelAtual, int nivelDesejado,
                   int *vet, int *n) {
     if (raiz == NULL) return;
@@ -123,9 +114,7 @@ void imprimirNiveis(No *raiz, int totalNiveis) {
     printf("\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 5) GRAU de cada no                                                         */
-/* -------------------------------------------------------------------------- */
+// 5) GRAU de cada no                                                         
 int grau(No *no) {
     if (no == NULL) return -1;
     int g = 0;
@@ -147,9 +136,7 @@ void imprimirGraus(No *raiz) {
     printf("\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 6) ANCESTRAIS (recursivo - sobe na pilha de chamadas)                      */
-/* -------------------------------------------------------------------------- */
+// 6) ANCESTRAIS (recursivo - sobe na pilha de chamadas)                      
 int coletarAncestrais(No *raiz, int valor, int *vet, int *n) {
     if (raiz == NULL) return 0;
     if (raiz->valor == valor) return 1;
@@ -176,9 +163,7 @@ void imprimirAncestrais(No *raiz, int valor) {
     printf("\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 7) DESCENDENTES (todos os nos abaixo)                                      */
-/* -------------------------------------------------------------------------- */
+// 7) DESCENDENTES (todos os nos abaixo)                                      
 void coletarDescendentes(No *no, int *vet, int *n) {
     if (no == NULL) return;
     vet[(*n)++] = no->valor;
@@ -188,7 +173,7 @@ void coletarDescendentes(No *no, int *vet, int *n) {
 
 void imprimirDescendentes(No *no) {
     int vet[100], n = 0;
-    /* O proprio no nao conta como descendente -> comeca pelos filhos */
+    // O proprio no nao conta como descendente -> comeca pelos filhos 
     coletarDescendentes(no->esquerda, vet, &n);
     coletarDescendentes(no->direita,  vet, &n);
     printf("Descendentes: ");
@@ -203,9 +188,7 @@ void imprimirDescendentes(No *no) {
     printf("\n");
 }
 
-/* -------------------------------------------------------------------------- */
-/* 8) ALTURA (distancia do no ate a folha mais profunda abaixo)               */
-/* -------------------------------------------------------------------------- */
+// 8) ALTURA (distancia do no ate a folha mais profunda abaixo)               
 int altura(No *no) {
     if (no == NULL) return -1;     /* no nulo: -1 */
     int hE = altura(no->esquerda);
@@ -213,9 +196,7 @@ int altura(No *no) {
     return 1 + (hE > hD ? hE : hD);
 }
 
-/* -------------------------------------------------------------------------- */
-/* 9) PROFUNDIDADE (distancia do no ate a raiz)                               */
-/* -------------------------------------------------------------------------- */
+// 9) PROFUNDIDADE (distancia do no ate a raiz)                               
 int profundidade(No *raiz, int valor, int nivel) {
     if (raiz == NULL) return -1;
     if (raiz->valor == valor) return nivel;
@@ -224,9 +205,7 @@ int profundidade(No *raiz, int valor, int nivel) {
     return profundidade(raiz->direita, valor, nivel + 1);
 }
 
-/* -------------------------------------------------------------------------- */
-/* 10) SUB-ARVORE  - desenho recursivo em formato visual                      */
-/* -------------------------------------------------------------------------- */
+// 10) SUB-ARVORE  - desenho recursivo em formato visual                      
 void desenharSubarvore(No *raiz, const char *prefixo,
                        int ehUltimo, int eRaiz) {
     if (raiz == NULL) return;
