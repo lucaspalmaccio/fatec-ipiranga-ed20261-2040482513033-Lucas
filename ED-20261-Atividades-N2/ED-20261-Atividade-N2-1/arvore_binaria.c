@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "arvore_binaria.h"
 
 // Criacao e insercao (recursiva) na BST                                      
 No* criarNo(int valor) {
