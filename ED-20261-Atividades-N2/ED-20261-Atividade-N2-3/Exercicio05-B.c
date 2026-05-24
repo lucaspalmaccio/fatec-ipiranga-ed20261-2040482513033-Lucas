@@ -1,5 +1,5 @@
 // RA: 2040482513033 - Nome do Aluno: Lucas Bastos Palmaccio
-// /* ===========================================================================
+/* ===========================================================================
  * Exercicio 05 - Partes B e C : Consultas estruturais na ABB + desenho ASCII.
  *   (a) altura dos nos: 50, 30, 70, 20 e 10
  *   (b) profundidade dos nos: 50, 30, 70, 45 e 10
