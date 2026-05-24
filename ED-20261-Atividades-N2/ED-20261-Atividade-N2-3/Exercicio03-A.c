@@ -1,5 +1,5 @@
 // RA: 2040482513033 - Nome do Aluno: Lucas Bastos Palmaccio
-// /* ===========================================================================
+/* ===========================================================================
  * Exercicio 03 - Parte A : Torres de Hanoi recursivas com contador global.
  *
  * O programa:
