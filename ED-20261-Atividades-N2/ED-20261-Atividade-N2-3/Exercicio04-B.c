@@ -1,5 +1,5 @@
 // RA: 2040482513033 - Nome do Aluno: Lucas Bastos Palmaccio
-// /* ===========================================================================
+/* ===========================================================================
  * Exercicio 04 - Parte B : Potenciacao Rapida (Fast Exponentiation).
  *   - Recursiva, com complexidade O(log n).
  *   - Comparada com a potenciacao ingenua O(n).
