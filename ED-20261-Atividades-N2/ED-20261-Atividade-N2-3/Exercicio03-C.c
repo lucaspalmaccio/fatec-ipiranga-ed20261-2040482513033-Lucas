@@ -1,5 +1,5 @@
 // RA: 2040482513033 - Nome do Aluno: Lucas Bastos Palmaccio
-// /* ===========================================================================
+/* ===========================================================================
  * Exercicio 03 - Parte C : Torres de Hanoi com rastreamento da PROFUNDIDADE
  *                          da recursao (parametro 'nivel').
  *                          A saida e indentada com (nivel * 2) espacos.
