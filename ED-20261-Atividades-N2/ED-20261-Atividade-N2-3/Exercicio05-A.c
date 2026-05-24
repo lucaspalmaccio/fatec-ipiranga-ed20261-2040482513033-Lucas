@@ -1,5 +1,5 @@
 // RA: 2040482513033 - Nome do Aluno: Lucas Bastos Palmaccio
-// /* ===========================================================================
+/* ===========================================================================
  * Exercicio 05 - Parte A : Definicao da Arvore Binaria de Busca (ABB) e
  *                          funcoes basicas: inserir, alturaNo, profundidadeNo,
  *                          grauNo e liberarArvore.
